@@ -1,0 +1,18 @@
+version: "3"
+
+vars:
+  VERSION:
+    sh: version --branch-name "${BRANCH_NAME}" --run-number "${RUN_NUMBER}"
+  DIST_PATH:
+    sh: echo "$(dirname "$(readlink -f "$BASH_SOURCE")")"/dist
+  REPO_NAME: "web.benefitsgo"
+
+includes:
+  base:
+    taskfile: ./.remote/taskfiles/npm.web.yml
+
+  ci:
+    taskfile: ./.remote/taskfiles/ci.yml
+
+  local:
+    taskfile: ./.remote/taskfiles/local.yml
