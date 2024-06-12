@@ -1,0 +1,11 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  ci:
+    uses: ebsi-epd/platform.github/.github/workflows/ci.yml@develop
+    secrets:
+      teamcity_github_token: "${{ secrets.teamcity_github_token }}"
