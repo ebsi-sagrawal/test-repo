@@ -18,9 +18,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -name: Build the code
-       run: |
-       echo "staring code build"
-       sleep 2m
-       echo "finish code build"
+      - name: Build the code
+        run: |
+          echo "starting code build"
+          sleep 2m
+          echo "finish code build"
     
