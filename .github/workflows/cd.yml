@@ -9,7 +9,7 @@ on:
         type: string
 
 concurrency:
-  group: ${{ github.event.inputs.env }}
+  group: ${{ inputs.env }}
   cancel-in-progress: true
         
 jobs:
