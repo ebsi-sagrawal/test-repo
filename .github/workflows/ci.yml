@@ -21,7 +21,6 @@ jobs:
       -name: Build the code
        run: |
        echo "staring code build"
-       echo ${{ github.event.inputs.env }}
        sleep 2m
        echo "finish code build"
     
