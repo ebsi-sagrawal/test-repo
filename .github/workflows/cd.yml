@@ -9,7 +9,7 @@ on:
         type: string
 
 concurrency:
-  group: ${{ inputs.env }}
+  group: test-group
   cancel-in-progress: true
         
 jobs:
