@@ -9,7 +9,7 @@ on:
         type: string
 
 concurrency:
-  group: test-group
+  group: ${{ github.workflow }}-${{ inputs.env }}
   cancel-in-progress: true
         
 jobs:
