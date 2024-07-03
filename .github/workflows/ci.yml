@@ -1,11 +1,27 @@
 name: ci
 
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
+    inputs:
+      env:
+        description: 'Target SDLC environment'
+        required: true
+        type: string
+
+concurrency:
+  group: ${{ github.event.inputs.env }}
+  cancel-in-progress: true
+        
 jobs:
-  ci:
-    uses: ebsi-epd/platform.github/.github/workflows/ci.yml@develop
-    secrets:
-      teamcity_github_token: "${{ secrets.teamcity_github_token }}"
+  build-and-test:
+    name: build and test on workflow call
+    runs-on: ubuntu-latest
+
+    steps:
+      -name: Build the code
+       run: |
+       echo "staring code build"
+       echo ${{ github.event.inputs.env }}
+       sleep 2m
+       echo "finish code build"
+    
