@@ -9,7 +9,7 @@ on:
         type: string
 
 concurrency:
-  group: "cd-${{ inputs.env }}"
+  group: ${{ inputs.env }}
   cancel-in-progress: true
         
 jobs:
@@ -21,7 +21,7 @@ jobs:
       - name: Build the code
         run: |
           echo "starting code build"
-          echo "${{ github.workflow }}-${{ inputs.env }}"
+          echo ${{ inputs.env }}
           sleep 30s
           echo "finish code build"
     
