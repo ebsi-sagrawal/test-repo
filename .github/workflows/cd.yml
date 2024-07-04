@@ -7,10 +7,6 @@ on:
         description: 'Target SDLC environment'
         required: true
         type: string
-
-concurrency:
-  group: ${{ github.event.inputs.env  }}
-  cancel-in-progress: true
         
 jobs:
   build-and-test:
