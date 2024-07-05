@@ -18,6 +18,6 @@ jobs:
         run: |
           echo "starting code build"
           echo ${{ inputs.env }}
-          sleep 30s
+          sleep 1m
           echo "finish code build"
     
